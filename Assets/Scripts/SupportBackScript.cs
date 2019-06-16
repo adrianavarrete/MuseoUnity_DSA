@@ -10,8 +10,20 @@ public class SupportBackScript : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Escape))
             {
+                androidAtras();
                 Application.Quit();
             }
         }
+    }
+
+    public void androidAtras()
+    {
+#if UNITY_ANDROID
+        AndroidJavaObject activity = new AndroidJavaObject("com.example.dsaproyectofront.MenuActivity");
+
+        activity.Call("botonAtras", new object[] { GameManager.instance.idUser });
+#endif
+
+
     }
 }

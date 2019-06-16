@@ -46,7 +46,6 @@ using UnityEngine.SceneManagement;
 
         //Set the foodText to reflect the current player food total.
 
-
             foodText.text = "Vida: " + food;
             puntosText.text = "Puntos: " + puntuacion;
 
@@ -145,7 +144,7 @@ using UnityEngine.SceneManagement;
 			
 			
 			//Update food text display to reflect current score.
-			foodText.text = "Vida " + food;
+			foodText.text = "Vida: " + food;
             puntosText.text = "Puntos: " + puntuacion; 
 
         //Call the AttemptMove method of the base class, passing in the component T (in this case Wall) and x and y direction to move.

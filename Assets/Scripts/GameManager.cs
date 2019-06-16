@@ -72,18 +72,7 @@ using System.Collections;
             //While doingSetup is true the player can't move, prevent player from moving while title card is up.
             doingSetup = true;
             
-            //Get a reference to our image LevelImage by finding it by name.
-            levelImage = GameObject.Find("LevelImage");
-            
-            //Get a reference to our text LevelText's text component by finding it by name and calling GetComponent.
-            levelText = GameObject.Find("LevelText").GetComponent<Text>();
-            
-            //Set the text of levelText to the string "Day" and append the current level number.
-            levelText.text = "SALA " + level;
-            
-            //Set levelImage to active blocking player's view of the game board during setup.
-            levelImage.SetActive(true);
-            
+                       
             //Call the HideLevelImage function with a delay in seconds of levelStartDelay.
             Invoke("HideLevelImage", levelStartDelay);
             
@@ -99,9 +88,7 @@ using System.Collections;
         //Hides black image used between levels
         void HideLevelImage()
         {
-            //Disable the levelImage gameObject.
-            levelImage.SetActive(false);
-            
+                      
             //Set doingSetup to false allowing player to move again.
             doingSetup = false;
         }
@@ -130,11 +117,7 @@ using System.Collections;
         {
         //Set levelText to display number of levels passed and game over message
         
-            levelText.text = "Vuelve otro dia a robar :)";
-            
-            //Enable black background image gameObject.
-            levelImage.SetActive(true);
-            
+                    
             //Disable this GameManager.
             enabled = false;
             Quit();
@@ -142,12 +125,7 @@ using System.Collections;
     }
     public void FinJuego()
         {
-            //Set levelText to display number of levels passed and game over message
-            levelText.text = "Felicidades, has salido del museo LLC";
             
-
-            //Enable black background image gameObject.
-            levelImage.SetActive(true);
             androidEnviarPuntuacion(playerPoints);
 
             //Disable this GameManager.
